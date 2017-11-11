@@ -60,11 +60,13 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images (./test_images/test2.jpg). After the camera is calibrated, the calibration results are saved
+
 ```Python
 dist_pickle = {}
 dist_pickle["mtx"] = mtx
 dist_pickle["dist"] = dist
-pickle.dump( dist_pickle, open( "camera_cal/calibration_pickle.p", "wb" ) )```
+pickle.dump( dist_pickle, open( "camera_cal/calibration_pickle.p", "wb" ) )
+```
 
 And then the "test2,jpg" is read in and `cv2.undistort` is called to do the undistortion. The result is show in the image below.
 
